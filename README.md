@@ -42,3 +42,6 @@ $ npm run test:cov
    1. Create demo service: `nest generate service demo`.
    2. Create crypto service: `nest generate service common/service/crypto --flat`.
    3. Create module for demo: `nest generate module demo`
+3. Create dtos
+   1. Create store demo dto: `nest generate class demo/dto/store-demo.dto --flat --no-spec`
+   2. Create query params dto: `nest generate class demo/dto/query-param.dto --flat --no-spec`
