@@ -14,11 +14,31 @@ export class DemoController {
 
     @Post("store")
     store(@Body() storeDemoDto: StoreDemoDto) {
-        return this.demoService.store(storeDemoDto);
+        const encryptedText = this.cryptoService.encrypt(
+            storeDemoDto.encryption_key,
+            JSON.stringify(storeDemoDto.value)
+        );
+
+        return this.demoService.store({
+            ...storeDemoDto,
+            value: encryptedText
+        });
     }
 
     @Get("retrieve")
-    retrieve(@Query() queryParamsDto: QueryParamDto) {
-        return this.demoService.retrieve(queryParamsDto);
+    async retrieve(@Query() queryParamsDto: QueryParamDto) {
+        const demos = await this.demoService.retrieve(queryParamsDto);
+
+        return demos.map(demo => {
+            const decryptedText = this.cryptoService.decrypt(
+                queryParamsDto.decryption_key,
+                demo.value
+            );
+
+            return {
+                ...demo,
+                value: JSON.parse(decryptedText)
+            };
+        });
     }
 }
