@@ -52,3 +52,7 @@ $ npm run test:cov
    3. Add validation decorators to store and query dto.
 5. Add `docker-compose.yml` file and configure `postgres`
    1. Run `postgres`: `docker compose up -d`
+6. Setup typeorm
+   1. Install typeorm packages and postgres package: `npm install @nestjs/typeorm typeorm pg`
+   2. Configure database connection in `AppModule`.
+   3. Create `Demo` entity: ``
