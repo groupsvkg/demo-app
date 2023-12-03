@@ -6,5 +6,5 @@ export class Demo {
     id: string;
 
     @Column()
-    encrypted_value: string;
+    value: string;
 }

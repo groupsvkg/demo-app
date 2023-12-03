@@ -10,20 +10,15 @@ export class DemoController {
     constructor(
         private readonly demoService: DemoService,
         private readonly cryptoService: CryptoService
-    ){}
+    ) { }
 
     @Post("store")
-    store(@Body() storeDemoDto: StoreDemoDto){
-        return storeDemoDto;
+    store(@Body() storeDemoDto: StoreDemoDto) {
+        return this.demoService.store(storeDemoDto);
     }
 
     @Get("retrieve")
-    retrieve(@Query() queryParamsDto: QueryParamDto){
-        return [
-                {
-                    key1: "value1",
-                    key2: "value2"
-                }
-            ];
+    retrieve(@Query() queryParamsDto: QueryParamDto) {
+        return this.demoService.retrieve(queryParamsDto);
     }
 }
