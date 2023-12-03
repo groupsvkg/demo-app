@@ -38,3 +38,7 @@ $ npm run test:cov
 1. Setup store and retrieve endpoints
    1. Create demo controller: `nest generate controller demo`
    2. Add store and retrieve endpoints.
+2. Create demo service and crypto service.
+   1. Create demo service: `nest generate service demo`.
+   2. Create crypto service: `nest generate service common/service/crypto --flat`.
+   3. Create module for demo: `nest generate module demo`
