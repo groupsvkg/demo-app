@@ -55,4 +55,5 @@ $ npm run test:cov
 6. Setup typeorm
    1. Install typeorm packages and postgres package: `npm install @nestjs/typeorm typeorm pg`
    2. Configure database connection in `AppModule`.
-   3. Create `Demo` entity: ``
+   3. Create `Demo` entity: `nest generate class demo/entity/demo.entity --no-spec --flat`
+7. Implement crypto service.
