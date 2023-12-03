@@ -45,3 +45,7 @@ $ npm run test:cov
 3. Create dtos
    1. Create store demo dto: `nest generate class demo/dto/store-demo.dto --flat --no-spec`
    2. Create query params dto: `nest generate class demo/dto/query-param.dto --flat --no-spec`
+4. Add data validation
+   1. Add global valiadtion pipe
+   2. Install `class-validator` and `class-transformer` npm package: `npm install class-validator class-transformer`.
+   3. Add validation decorators to store and query dto.

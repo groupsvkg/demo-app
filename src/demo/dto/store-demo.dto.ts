@@ -1,5 +1,12 @@
+import { IsNotEmpty, IsString } from 'class-validator';
+
 export class StoreDemoDto {
-    readonly id: string;
-    readonly encryption_key: string;
-    readonly value: unknown;
+  @IsString()
+  readonly id: string;
+
+  @IsString()
+  readonly encryption_key: string;
+
+  @IsNotEmpty()
+  readonly value: unknown;
 }

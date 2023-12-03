@@ -1,4 +1,17 @@
+import { IsOptional, IsPositive, IsString } from 'class-validator';
+
 export class QueryParamDto {
-    readonly id: string;
-    readonly decryption_key: string;
+  @IsString()
+  readonly id: string;
+
+  @IsString()
+  readonly decryption_key: string;
+
+  @IsOptional()
+  @IsPositive()
+  skip: number;
+
+  @IsOptional()
+  @IsPositive()
+  take: number;
 }
