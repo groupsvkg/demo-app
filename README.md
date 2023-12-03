@@ -33,6 +33,7 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
 ## Implementation Steps
 
 1. Setup store and retrieve endpoints
@@ -49,3 +50,5 @@ $ npm run test:cov
    1. Add global valiadtion pipe
    2. Install `class-validator` and `class-transformer` npm package: `npm install class-validator class-transformer`.
    3. Add validation decorators to store and query dto.
+5. Add `docker-compose.yml` file and configure `postgres`
+   1. Run `postgres`: `docker compose up -d`
