@@ -18,7 +18,7 @@ export class CryptoService {
 
             return encryptedText.toString('hex');
         } catch (error) {
-            throw new HttpException(error.message, HttpStatus.BAD_REQUEST)
+            throw new BadRequestException(error.message);
         }
     }
 
@@ -37,7 +37,7 @@ export class CryptoService {
 
             return decryptedText.toString();
         } catch (error) {
-            throw new HttpException(error.message, HttpStatus.BAD_REQUEST)
+            throw new BadRequestException(error.message);
         }
     }
 }

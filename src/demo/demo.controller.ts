@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { DemoService } from './demo.service';
 import { CryptoService } from 'src/common/service/crypto.service';
 import { StoreDemoDto } from './dto/store-demo.dto';
@@ -35,10 +35,15 @@ export class DemoController {
                 demo.value
             );
 
-            return {
-                ...demo,
-                value: JSON.parse(decryptedText)
-            };
+            try {
+                return {
+                    ...demo,
+                    value: JSON.parse(decryptedText)
+                };
+            } catch (error) {
+                throw new BadRequestException(error.message);
+            }
+
         });
     }
 }
