@@ -11,6 +11,9 @@ $ npm install
 ## Running the app
 
 ```bash
+# postgres
+$ docker compose up -d
+
 # development
 $ npm run start
 
